@@ -11,9 +11,7 @@ public class Category {
     private Long id;
     private String description;
 
-    @ManyToMany
-    @JoinTable(name = "recipe_category",
-            joinColumns = @JoinColumn(name = "recipe_id"))
+    @ManyToMany(mappedBy = "categories")
     private Set<Recipe> recipes;
 
     public Long getId() {
